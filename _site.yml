@@ -1,0 +1,9 @@
+name: "Coronakarte"
+output_dir: "."
+navbar:
+  title: "Coronakarten"
+  left:
+    - text: "Südtirol"
+      href: index.html
+    - text: "About"
+      href: about.html

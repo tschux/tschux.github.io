@@ -1,6 +1,4 @@
 ---
-title: "Some regional visualisation on Corona infection and quarantine data"
-
 output: html_document
 ---
 ![](Mapplotr.gif)

@@ -3,10 +3,4 @@ title: "Some regional visualisation on Corona infection and quarantine data"
 
 output: html_document
 ---
-
-<<insertHTML:[mapp.html]
-
-
-```{r, echo=FALSE}
-htmltools::includeHTML("mapp.html")
-```
+![](Mapplotr.gif)

@@ -7,9 +7,5 @@ navbar:
       href: index.html
     - text: "Südtirol positiv"
       href: MapSTP.html
-    - text: "Provinzen"
-      href: gifITP.html
-    - text: "Regionen"
-      href: gifITR.html
     - text: "About"
       href: about.html

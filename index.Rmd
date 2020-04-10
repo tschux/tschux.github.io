@@ -4,10 +4,6 @@ title: "Some regional visualisation on Corona infection and quarantine data"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-
-```
 
 <<insertHTML:[map.html]
 

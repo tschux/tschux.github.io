@@ -51,7 +51,7 @@ df$`Cod Istat` <- as.integer(df$`Cod Istat`)
         dfc <-full_join(df, dfp, by = "astat")
         names(dfc)[14] <- paste("quis")
         names(dfc)[18] <- paste("Totali")
-        titletext <- "Data Source: Provinz  Bozen Date : 10.4.2020, Created with: R by J. Mayr"
+        titletext <- "Data Source: Provinz <br /> Bozen Date : 10.4.2020,<br /> Created with: R by J. Mayr"
 
 ```{r, echo=FALSE,out.width="100%"}
 leaflet(gvcc) %>%

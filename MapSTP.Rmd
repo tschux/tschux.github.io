@@ -1,7 +1,7 @@
 ---
 output: html_document
 ---
-In die Karte klicken!
+In die Karte klicken um die Gemeindedaten zu sehen!
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(rjson)

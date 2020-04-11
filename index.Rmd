@@ -172,5 +172,5 @@ knitr::opts_chunk$set(echo = TRUE)
 leaflet(gvcc) %>% 
   addTiles(urlTemplate = 'https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png') %>%
   addPolygons(stroke = F, smoothFactor = 0.1, fillOpacity = 1, fillColor = ~pal(dfc$quis/ev*100),labelOptions = labelOptions(textsize = "15px",opacity = 0.7), label = lapply(paste0("<b>",dfc$Wohngemeinde,"</b> <br />  in Quarantäne in %: ", formatC(dfc$quis/ev*100, big.mark = ","),"<br />  in Quarantäne: ", formatC(dfc$quis, big.mark = ","),"<br /> Änderung: ",  formatC(dfc$`variazione rispetto al giorno precedente...11` , big.mark = ","),"<br /> Positiv: ",  formatC(dfc$Totali , big.mark = ","),"<br /> Änderung: ",  formatC(dfc$`aumento di casi dal giorno prima` , big.mark = ",")), htmltools::HTML)) %>%
-addLegend(pal = pal,title = "Anzahl Quarantäne in %",na.label = "Keine Angabe",position = "bottomright", values = ~dfc$quis/ev*100, opacity = 1.0)%>% addControl(titletext, position = "topright", className="map-title")
+addLegend(pal = pal,title = "Quarantäne in % zur EZ",na.label = "Keine Angabe",position = "bottomright", values = ~dfc$quis/ev*100, opacity = 1.0)%>% addControl(titletext, position = "topright", className="map-title")
 ```

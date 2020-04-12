@@ -53,7 +53,7 @@ dfp$astat <- as.integer(dfp$astat)
 dfc <-full_join(df, dfp, by = "astat")
 names(dfc)[14] <- paste("quis")
 names(dfc)[18] <- paste("Totali")
-titletext <- "Data Source: Provinz  Bozen <br />  Date : 11.4.2020, <br /> Created with: R by J. Mayr"
+titletext <- "Data Source: Provinz  Bozen <br />  Date : 12.4.2020, <br /> Created with: R by J. Mayr"
 labelFormat(prefix = "", suffix = "", between = " – ",
   digits = 3, big.mark = ",", transform = identity)
 ```

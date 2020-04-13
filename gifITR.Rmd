@@ -7,7 +7,7 @@ output: html_document
   library(GADMTools)
   library(plotly)
   library(rosm)
-  library(curl)
+    library(curl)
   library(jsonlite)
   library(magrittr)
   library(tibble)

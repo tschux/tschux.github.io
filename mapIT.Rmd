@@ -43,7 +43,6 @@ leaflet(tilesURL) %>%
         addProviderTiles(providers$Esri.WorldImagery, group = "World Imagery") %>%
         addProviderTiles(providers$CartoDB.Positron)%>%
         addLayersControl(baseGroups = c("Carto DB Positron", "World Imagery")) %>%
-        #  addTiles(urlTemplate = 'https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png') %>%
         addPolygons(stroke = F, smoothFactor = 0.1, fillOpacity = .7, fillColor = ~pal(pcmdpcr$totale_positivi/pcmdpcr$num_residenti*100),labelOptions = labelOptions(textsize = "15px",opacity = 0.7), label = lapply(paste0("<b>",pcmdpcr$regione,"</b> <br />  in Positive in %: ", formatC(pcmdpcr$totale_positivi/pcmdpcr$num_residenti*100, big.mark = ","),"<br />  Positive: ", formatC(pcmdpcr$totale_positivi, big.mark = ","),"<br /> Var Positive: ",  formatC(pcmdpcr$variazione_totale_positivi , big.mark = ","),"<br /> Gesundet: ",  formatC(pcmdpcr$dimessi_guariti, big.mark = ","),"<br /> Todesfälle: ",  formatC(pcmdpcr$deceduti , big.mark = ",")), htmltools::HTML)) %>%
         addLegend(pal = pal,title = "Positive in % zur EZ",labFormat = labelFormat(),na.label = "Keine Angabe",position = "bottomright", values = ~pcmdpcr$totale_positivi/pcmdpcr$num_residenti*100, opacity = .7)%>% addControl(titletext, position = "topright", className="map-title")
 

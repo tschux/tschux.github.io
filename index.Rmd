@@ -38,10 +38,10 @@ download.file(dataURLp, destfile=temp, mode='wb')
 
      
 dfp <- readxl::read_excel(temp, sheet =1,skip = 2)
-# names(dfp)[1]<-paste("x")
-# names(dfp)[2]<-paste("y")
-# dfp <- subset( dfp, select = -x )
-# dfp <- subset( dfp, select = -y )
+names(dfp)[1]<-paste("x")
+names(dfp)[2]<-paste("y")
+dfp <- subset( dfp, select = -x )
+dfp <- subset( dfp, select = -y )
 names(dfp)[2]<-paste("p")
 names(dfp)[3]<-paste("c")
 
@@ -63,8 +63,7 @@ leaflet(gvcc) %>%
 addProviderTiles(providers$Esri.WorldImagery, group = "World Imagery") %>%
 addProviderTiles(providers$CartoDB.Positron)%>%
 addLayersControl(baseGroups = c("Carto DB Positron", "World Imagery")) %>%
-#  addTiles(urlTemplate = 'https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png') %>%
-  addPolygons(stroke = F, smoothFactor = 0.1, fillOpacity = .7, fillColor = ~pal(dfc$quis/ev*100),labelOptions = labelOptions(textsize = "15px",opacity = 0.7), label = lapply(paste0("<b>",dfc$Wohngemeinde,"</b> <br />  in Quarantäne in %: ", formatC(dfc$quis/ev*100, big.mark = ","),"<br />  in Quarantäne: ", formatC(dfc$quis, big.mark = ","),"<br /> Änderung: ",  formatC(dfc$`variazione rispetto al giorno precedente...11` , big.mark = ","),"<br /> Positiv: ",  formatC(dfc$Totali , big.mark = ","),"<br /> Änderung: ",  formatC(dfc$`aumento di casi dal giorno prima` , big.mark = ",")), htmltools::HTML)) %>%
+addPolygons(stroke = F, smoothFactor = 0.1, fillOpacity = .7, fillColor = ~pal(dfc$quis/ev*100),labelOptions = labelOptions(textsize = "15px",opacity = 0.7), label = lapply(paste0("<b>",dfc$Wohngemeinde,"</b> <br />  in Quarantäne in %: ", formatC(dfc$quis/ev*100, big.mark = ","),"<br />  in Quarantäne: ", formatC(dfc$quis, big.mark = ","),"<br /> Änderung: ",  formatC(dfc$`variazione rispetto al giorno precedente...11` , big.mark = ","),"<br /> Positiv: ",  formatC(dfc$Totali , big.mark = ","),"<br /> Änderung: ",  formatC(dfc$`aumento di casi dal giorno prima` , big.mark = ",")), htmltools::HTML)) %>%
 addLegend(pal = pal,title = "Quarantäne in % zur EZ",labFormat = labelFormat(),na.label = "Keine Angabe",position = "bottomright", values = ~dfc$quis/ev*100, opacity = .7)%>% addControl(titletext, position = "topright", className="map-title")
 
 ```

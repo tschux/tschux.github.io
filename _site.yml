@@ -3,17 +3,19 @@ output_dir: "."
 navbar:
   title: "Coronakarten"
   left:
-    - text: "Südtirol Quarantäne"
+    - text: "ST Quarantäne"
       href: index.html
-    - text: "Südtirol positiv"
+    - text: "ST positiv"
       href: MapSTP.html
+    - text: "Prov positiv"
+      href: mapITp.html
     - text: "Reg positiv"
       href: mapIT.html 
     - text: "Reg Tote"
       href: mapITq.html 
-    - text: "Animation Prov"
+    - text: "Anim Prov"
       href: gifITP.html
-    - text: "Animation Reg"
+    - text: "Anim Reg"
       href: gifITR.html
     - text: "About"
       href: about.html

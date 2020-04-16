@@ -38,10 +38,10 @@ download.file(dataURLp, destfile=temp, mode='wb')
 
      
 dfp <- readxl::read_excel(temp, sheet =1,skip = 2)
-names(dfp)[1]<-paste("x")
-names(dfp)[2]<-paste("y")
-dfp <- subset( dfp, select = -x )
-dfp <- subset( dfp, select = -y )
+# names(dfp)[1]<-paste("x")
+# names(dfp)[2]<-paste("y")
+# dfp <- subset( dfp, select = -x )
+# dfp <- subset( dfp, select = -y )
 names(dfp)[2]<-paste("p")
 names(dfp)[3]<-paste("c")
 

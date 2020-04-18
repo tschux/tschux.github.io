@@ -11,7 +11,7 @@
 
 <meta name="author" content="Visualisation made by Jürgen Mayr" />
 
-<meta name="date" content="2020-04-18" />
+<meta name="date" content="2020-04-19" />
 
 <title>About This Website</title>
 
@@ -24,6 +24,8 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -273,29 +275,69 @@ $(document).ready(function () {
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li>
-  <a href="index.html">ST Quarantäne</a>
-</li>
-<li>
-  <a href="MapSTP.html">ST positiv</a>
-</li>
-<li>
-  <a href="mapITp.html">Prov positiv</a>
-</li>
-<li>
-  <a href="mapIT.html">Reg positiv</a>
-</li>
-<li>
-  <a href="mapITq.html">Reg Tote</a>
-</li>
-<li>
-  <a href="gifITP.html">Anim Prov</a>
-</li>
-<li>
-  <a href="gifITR.html">Anim Reg</a>
-</li>
-<li>
-  <a href="about.html">About</a>
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-info"></span>
+     
+    Kartenauswahl
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="index.html">
+        <span class="fa fa-map"></span>
+         
+        Südtirol Quarantänefälle
+      </a>
+    </li>
+    <li>
+      <a href="MapSTP.html">
+        <span class="fa fa-map"></span>
+         
+        Südtirol positive Fälle
+      </a>
+    </li>
+    <li class="divider"></li>
+    <li class="dropdown-header">Karten von Italien</li>
+    <li>
+      <a href="mapITp.html">
+        <span class="fa fa-map"></span>
+         
+        Provinzen positive Fälle
+      </a>
+    </li>
+    <li>
+      <a href="mapIT.html">
+        <span class="fa fa-map"></span>
+         
+        Regionen positive Fälle mit Zusatzinfos
+      </a>
+    </li>
+    <li>
+      <a href="mapITq.html">
+        <span class="fa fa-map"></span>
+         
+        Regionen Todesfälle mit Zusatzinfos
+      </a>
+    </li>
+    <li class="divider"></li>
+    <li class="dropdown-header">Animationen von Italien</li>
+    <li>
+      <a href="gifITP.html">
+        <span class="fa fa-film"></span>
+         
+        Animation der positiven Fälle
+      </a>
+    </li>
+    <li>
+      <a href="gifITR.html">
+        <span class="fa fa-film"></span>
+         
+        Animation der regionalen Fälle
+      </a>
+    </li>
+  </ul>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -311,7 +353,7 @@ $(document).ready(function () {
 
 <h1 class="title toc-ignore">About This Website</h1>
 <h4 class="author">Visualisation made by Jürgen Mayr</h4>
-<h4 class="date">2020-04-18</h4>
+<h4 class="date">2020-04-19</h4>
 
 </div>
 

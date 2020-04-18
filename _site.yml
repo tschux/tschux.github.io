@@ -3,19 +3,33 @@ output_dir: "."
 navbar:
   title: "Coronakarten"
   left:
-    - text: "ST Quarantäne"
-      href: index.html
-    - text: "ST positiv"
-      href: MapSTP.html
-    - text: "Prov positiv"
-      href: mapITp.html
-    - text: "Reg positiv"
-      href: mapIT.html 
-    - text: "Reg Tote"
-      href: mapITq.html 
-    - text: "Anim Prov"
-      href: gifITP.html
-    - text: "Anim Reg"
-      href: gifITR.html
-    - text: "About"
+    - text: "Kartenauswahl"
+      icon: fa-info
       href: about.html
+      menu:
+      - text: "Südtirol Quarantänefälle"
+        icon: fa-map
+        href: index.html
+      - text: "Südtirol positive Fälle"
+        icon: fa-map
+        href: MapSTP.html
+      - text: "---------"
+      - text: "Karten von Italien"
+        icon: fa-map
+      - text: "Provinzen positive Fälle"
+        icon: fa-map
+        href: mapITp.html
+      - text: "Regionen positive Fälle mit Zusatzinfos"
+        icon: fa-map
+        href: mapIT.html 
+      - text: "Regionen Todesfälle mit Zusatzinfos"
+        icon: fa-map
+        href: mapITq.html
+      - text: "---------"         
+      - text: "Animationen von Italien"
+      - text: "Animation der positiven Fälle"
+        icon: fa-film
+        href: gifITP.html
+      - text: "Animation der regionalen Fälle"
+        icon: fa-film
+        href: gifITR.html

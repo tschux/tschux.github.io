@@ -1,0 +1,18 @@
+name: "Coronakarte"
+output_dir: "."
+navbar:
+  title: "Coronakarten"
+  left:
+    -Karten:
+    -- text: "Südtirol Quarantäne"
+      href: index.html
+    -- text: "Südtirol positiv"
+      href: MapSTP.html
+    -Tabellen:
+    -- text: "Südtirol"
+    -- text: "National"
+    -Animationen:
+    -- text: "Provinzen"
+    -- text: "Regionen"
+    - text: "About"
+      href: about.html

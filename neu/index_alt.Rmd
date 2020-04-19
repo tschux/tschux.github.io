@@ -1,0 +1,13 @@
+---
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+<<insertHTML:[map.html]
+
+
+```{r, echo=FALSE}
+htmltools::includeHTML("map.html")
+```

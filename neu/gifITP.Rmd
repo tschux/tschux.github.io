@@ -1,0 +1,45 @@
+---
+output: html_document
+---
+
+```{r setup, include=FALSE}
+  library(GADMTools)
+  library(plotly)
+  library(rosm)
+  library(curl)
+  library(jsonlite)
+  library(magrittr)
+  library(tibble)
+  library(dplyr)
+  library(shiny)
+  library(ggplot2)
+  library(gganimate)
+  library(viridis)
+  # Loading country border (level=0 [default])
+  # -----------------------------------------------------------------
+  ITA <-gadm_sf_loadCountries("ITA",basefile ="./",level=2)
+  par(pin=c(5, 4))
+  adige <-gadm_subset(ITA,level=2,regions=c("Bolzano","Trento"))
+  #adige <-gadm_subset(ITA,level=1,regions=c( "Bolzano","Trento","Belluno"))
+  # BRE2 <-gadm_getBackground(ITA,"ITA","osm")
+  pcmdpcf <- read.csv(curl("https://github.com/pcm-dpc/COVID-19/raw/master/dati-province/dpc-covid19-ita-province.csv"))
+  pcmdpc <- filter(pcmdpcf,pcmdpcf$lat > 0 & pcmdpcf$long >0)
+  pcmdpc$data <- as.Date(as.factor(gsub("T.*","",pcmdpc$data)))
+  
+```
+
+```{r, echo=FALSE,out.width="100%"}
+  Mapplot <- plotmap(ITA)+
+    geom_point(pcmdpc, mapping = aes(x = long , y = lat, size=totale_casi, col = totale_casi, alpha=0.01))+scale_size(range = c(0, 20))+
+    transition_states(data,
+                      transition_length = 1,
+                      state_length = 0.5,wrap = FALSE) +labs(title = "Made with R by Jürgen Mayr, Date:{frame_time}", x="Longitude",y="Latitude",colour="Casi totali") + guides(fill = guide_colourbar(barwidth = 5, barheight = 170))+theme(plot.title = element_text(size=20), legend.text = element_text( size = 20), text = element_text( size = 20)) + theme(legend.title = element_text( size=20))+ 
+    scale_color_viridis(option = "D")+
+    transition_time(data)
+  
+    #view_follow(fixed_y = TRUE)
+  animate(Mapplot, height = 1200, width =1200)
+  ```
+
+
+    

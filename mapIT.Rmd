@@ -37,7 +37,9 @@ pcmdpcr<- pcmdpcr%>% select(reg_istat_code, totale_positivi,isolamento_domicilia
 pcmdpcr <-full_join(ev, pcmdpcr,  by = "reg_istat_code")
 pcmdpcr <- pcmdpcr[order(pcmdpcr$reg_istat_code),]
 ```
-In die Karte klicken um die Gemeindedaten zu sehen!
+`r titletext`
+
+In die Karte klicken um die Daten zu sehen! 
 ```{r,echo=FALSE,out.width="100%"}
 leaflet(tilesURL) %>% 
         addProviderTiles(providers$Esri.WorldImagery, group = "World Imagery") %>%

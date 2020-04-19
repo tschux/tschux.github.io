@@ -1,7 +1,6 @@
 ---
 output: html_document
 ---
-In die Karte klicken um die Gemeindedaten zu sehen!
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(rjson)
@@ -52,8 +51,10 @@ df$`Cod Istat` <- as.integer(df$`Cod Istat`)
         names(dfc)[14] <- paste("quis")
         names(dfc)[18] <- paste("Totali")
         titletext <- paste0("Data Source: Provinz  Bozen <br />  Date : ", Sys.Date(), "<br /> Created with: R by J. Mayr")
+```
+`r titletext`
 
-
+In die Karte klicken um die Daten zu sehen! 
 ```{r, echo=FALSE,out.width="100%"}
 leaflet(gvcc) %>%
 addProviderTiles(providers$Esri.WorldImagery, group = "World Imagery") %>%

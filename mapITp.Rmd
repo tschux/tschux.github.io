@@ -38,7 +38,9 @@ ev <- full_join(testorder,ev,  by = "sigla_provincia")
 # pcmdpcr<- pcmdpcr%>% select(reg_istat_code, totale_positivi,isolamento_domiciliare,variazione_totale_positivi,dimessi_guariti,deceduti)%>% group_by(reg_istat_code) %>% summarise_all(sum)
 pcmdpcr <-full_join(ev, pcmdpcr,  by = "sigla_provincia")
 ```
-In die Karte klicken um die Daten zu sehen! `r titletext`
+`r titletext`
+
+In die Karte klicken um die Daten zu sehen! 
 ```{r,echo=FALSE,out.width="100%"}
 leaflet(tilesURL) %>% 
   addProviderTiles(providers$Esri.WorldImagery, group = "World Imagery") %>%

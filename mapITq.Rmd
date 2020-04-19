@@ -37,13 +37,15 @@ pcmdpcr<- pcmdpcr%>% select(reg_istat_code, totale_positivi,isolamento_domicilia
 pcmdpcr <-full_join(ev, pcmdpcr,  by = "reg_istat_code")
 pcmdpcr <- pcmdpcr[order(pcmdpcr$reg_istat_code),]
 ```
-In die Karte klicken um die Gemeindedaten zu sehen!
+`r titletext`
+
+In die Karte klicken um die Daten zu sehen! 
 ```{r,echo=FALSE,out.width="100%"}
 leaflet(tilesURL) %>% 
         addProviderTiles(providers$Esri.WorldImagery, group = "World Imagery") %>%
         addProviderTiles(providers$CartoDB.Positron)%>%
         addLayersControl(baseGroups = c("Carto DB Positron", "World Imagery")) %>%
         addPolygons(stroke = F, smoothFactor = 0.1, fillOpacity = .7, fillColor = ~pal(pcmdpcr$deceduti/pcmdpcr$num_residenti*100),labelOptions = labelOptions(textsize = "15px",opacity = 0.7), label = lapply(paste0("<b>",pcmdpcr$regione,"</b> <br />  in Tote in %: ", formatC(pcmdpcr$deceduti/pcmdpcr$num_residenti*100, big.mark = ","),"<br />  Positive: ", formatC(pcmdpcr$totale_positivi, big.mark = ","),"<br /> Var Positive: ",  formatC(pcmdpcr$variazione_totale_positivi , big.mark = ","),"<br /> Gesundet: ",  formatC(pcmdpcr$dimessi_guariti, big.mark = ","),"<br /> Todesfälle: ",  formatC(pcmdpcr$deceduti , big.mark = ",")), htmltools::HTML)) %>%
-        addLegend(pal = pal,title = "Tote in % zur EZ",labFormat = labelFormat(),na.label = "Keine Angabe",position = "bottomright", values = ~pcmdpcr$deceduti/pcmdpcr$num_residenti*100, opacity = .7)%>% addControl(titletext, position = "topright", className="map-title")
+        addLegend(pal = pal,title = "Tote in % zur EZ",labFormat = labelFormat(),na.label = "Keine Angabe",position = "bottomright", values = ~pcmdpcr$deceduti/pcmdpcr$num_residenti*100, opacity = .7)#%>% addControl(titletext, position = "topright", className="map-title")
 
 ```

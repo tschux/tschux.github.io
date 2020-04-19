@@ -6,4 +6,4 @@ date: "`r Sys.Date()`"
 
 ## Some notes and credits
 
-  The national data source is the github repository Umberto Rosini. The local data of South Tyrol is provided by the daily Zivilschutz publication
+The national data source is the github repository Umberto Rosini. The local data of South Tyrol is provided by the daily Zivilschutz publication

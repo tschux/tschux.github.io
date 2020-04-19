@@ -1,5 +1,5 @@
 name: "Coronakarte"
-output_dir: "."
+output_dir: "./outdir"
 navbar:
   title: "Coronakarten"
   left:

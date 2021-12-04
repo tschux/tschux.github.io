@@ -1,0 +1,10 @@
+---   
+title: "About This Website"
+author: "Visualisation made by Jürgen Mayr"
+date: "`r Sys.Date()`"
+---
+
+## Some notes and credits
+
+The national data source is the [civil protection github repository](https://github.com/pcm-dpc/COVID-19). The local data of South Tyrol is provided by the daily local Zivilschutz publication.
+                                                    
